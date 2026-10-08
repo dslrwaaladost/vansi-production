@@ -30,8 +30,12 @@ section{padding:85px 22px}.container{max-width:1200px;margin:auto}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3b3222}
 .card h3{margin:12px 0 6px}.card p{color:var(--muted);font-size:14px}.icon{font-size:30px}
+.about{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 40%,rgba(213,170,85,.035),transparent 28%)}
+.about:before{content:"📹";position:absolute;right:4%;top:8%;font-size:420px;line-height:1;opacity:.025;filter:grayscale(1) blur(1px);pointer-events:none;transform:rotate(-4deg)}
+.about:after{content:"👥  👥  👥  👥  👥  👥  👥";position:absolute;left:1%;bottom:2%;font-size:95px;letter-spacing:10px;white-space:nowrap;opacity:.025;filter:grayscale(1) blur(1px);pointer-events:none}
+.about .container{position:relative;z-index:2}
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:stretch}
-.about-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px}.about-box p{color:var(--muted);margin-top:12px}
+.about-box{background:rgba(18,18,18,.94);border:1px solid var(--line);border-radius:12px;padding:32px}.about-box p{color:var(--muted);margin-top:12px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}.stat{background:#101010;padding:28px;position:relative;overflow:hidden;cursor:none;transition:background .25s ease}.stat b{display:block;font-size:26px;color:var(--gold2)}.stat:hover{background:#151515}.lens{position:absolute;width:72px;height:72px;border:2px solid rgba(240,207,131,.9);border-radius:50%;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.65);transition:opacity .18s ease,transform .22s ease;box-shadow:0 0 0 8px rgba(213,170,85,.08),0 0 28px rgba(213,170,85,.28),inset 0 0 18px rgba(213,170,85,.15);background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),transparent 18%),radial-gradient(circle,#080808 0 24%,#24201a 25% 42%,#090909 43% 58%,#6e5730 59% 62%,#0a0a0a 63%)}.stat:hover .lens{opacity:1;transform:translate(-50%,-50%) scale(1)}.lens:before{content:attr(data-icon);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:27px;filter:drop-shadow(0 0 5px rgba(240,207,131,.5))}.lens:after{content:"";position:absolute;inset:9px;border:1px solid rgba(240,207,131,.35);border-radius:50%}
 .events .card{min-height:160px}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gallery-item{height:240px;border-radius:12px;border:1px solid var(--line);overflow:hidden;display:block;background:#111}.gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease,filter .35s ease}.gallery-item:hover img{transform:scale(1.04);filter:brightness(1.08)}
@@ -40,7 +44,7 @@ section{padding:85px 22px}.container{max-width:1200px;margin:auto}
 footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28px 20px;font-size:13px}
 @media(max-width:900px){nav{display:none}.grid,.video-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font-size:13px;color:#d0cbc3;font-weight:700}.form-field input,.form-field select,.form-field textarea{width:100%;padding:13px 14px;border:1px solid #333;border-radius:7px;background:#0b0b0b;color:#f6f2ea;font:inherit;outline:none}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#d5aa55;box-shadow:0 0 0 2px rgba(213,170,85,.1)}.form-field textarea{min-height:120px;resize:vertical}.form-note{font-size:12px;color:#777;margin-top:10px}@media(max-width:560px){.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
-@media(max-width:560px){section{padding:62px 18px}.hero-inner{padding:70px 18px}.grid,.video-grid,.gallery-grid{grid-template-columns:1fr}.brand strong{font-size:16px}.brand img{width:56px}.logo-big{width:280px}h1{font-size:45px}.stats{grid-template-columns:1fr}}
+@media(max-width:560px){section{padding:62px 18px}.hero-inner{padding:70px 18px}.grid,.video-grid,.gallery-grid{grid-template-columns:1fr}.brand strong{font-size:16px}.brand img{width:56px}.logo-big{width:280px}h1{font-size:45px}.stats{grid-template-columns:1fr}.about:before{font-size:250px;right:-4%;top:14%}.about:after{font-size:55px;left:-8%;bottom:4%}}
 </style>
 </head>
 <body>
@@ -49,7 +53,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <nav><a href="#about">About</a><a href="#services">Services</a><a href="#events">Events</a><a href="#gallery">Gallery</a><a href="#videos">Videos</a><a href="#contact">Contact</a></nav>
 <a class="btn" href="#contact">Contact</a>
 </div></header>
-
 <section class="hero" id="home"><div class="hero-inner">
 <div class="kicker">BHAJAN • LIVE KIRTAN • VIDEO PRODUCTION</div>
 <img class="logo-big" src="vansi-logo.png" alt="Vansi Production Logo">
@@ -57,14 +60,12 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <p>Professional live streaming, devotional event coverage, photography, video production and creative content by Vansi Production.</p>
 <div class="actions"><a class="btn" href="#services">Our Services</a><a class="btn alt" href="#videos">Watch Videos</a></div>
 </div></section>
-
-<section id="about"><div class="container">
+<section id="about" class="about"><div class="container">
 <div class="head"><small>WHO WE ARE</small><h2>Vansi Production</h2><p>Bhajan, live kirtan and event production ko professional visual experience mein present karne ke liye.</p></div>
 <div class="about-grid">
 <div class="about-box"><h3>Creative Production</h3><p>Live programs, kirtan, jagran, devotional events aur promotional content ke liye camera, live broadcast aur post-production workflow.</p><p>Hamari priority hai — clean visuals, reliable streaming aur event ki asli energy ko capture karna.</p></div>
 <div class="stats"><div class="stat"><span class="lens" data-icon="📹"></span><b>LIVE</b>Streaming</div><div class="stat"><span class="lens" data-icon="🎬"></span><b>VIDEO</b>Production</div><div class="stat"><span class="lens" data-icon="👥"></span><b>EVENT</b>Coverage</div><div class="stat"><span class="lens" data-icon="✨"></span><b>CREATIVE</b>Content</div></div>
 </div></div></section>
-
 <section class="dark" id="services"><div class="container">
 <div class="head"><small>WHAT WE DO</small><h2>Our Services</h2><p>Production ke major areas ek hi place par.</p></div>
 <div class="grid">
@@ -75,7 +76,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="card"><div class="icon">🖥️</div><h3>Broadcast Production</h3><p>OBS scenes, switching, graphics, replay aur broadcast workflow.</p></div>
 <div class="card"><div class="icon">✨</div><h3>Creative Content</h3><p>Thumbnails, posters, reels, shorts aur event promotional creatives.</p></div>
 </div></div></section>
-
 <section class="events" id="events"><div class="container">
 <div class="head"><small>UPCOMING PROGRAMS</small><h2>Upcoming Events</h2><p>Vansi Production ke upcoming programs aur November kirtan details.</p></div>
 <div style="margin-bottom:22px;padding:12px 16px;border-left:3px solid var(--gold);background:#111;border-radius:6px;color:#d8d0c5"><strong>OCTOBER 2026</strong></div>
@@ -84,11 +84,9 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="grid"><div class="card"><h3>November Kirtan</h3><p>📅 Date: To be announced</p><p>📍 Venue: To be announced</p><p>🎤 Artist / Program details: Coming soon</p></div><div class="card"><h3>November Kirtan</h3><p>📅 Date: To be announced</p><p>📍 Venue: To be announced</p><p>🎤 Artist / Program details: Coming soon</p></div><div class="card"><h3>November Programs</h3><p>📅 November 2026</p><p>Details will be updated here.</p></div></div><div style="margin:32px 0 22px;padding:12px 16px;border-left:3px solid var(--gold);background:#111;border-radius:6px;color:#d8d0c5"><strong>JANUARY 2027</strong><br><span style="color:var(--muted);font-size:13px">UP East ke upcoming kirtan aur programs ki details yahan show hongi.</span></div>
 <div class="grid"><div class="card"><h3>January 2027 — UP East</h3><p>📍 Uttar Pradesh East</p><p>🎤 Kirtan / Program details: Coming soon</p></div></div>
 </div></section>
-
 <section class="dark" id="gallery"><div class="container">
 <div class="head"><small>OUR WORK</small><h2>Gallery</h2><p>Vansi Production ke real event aur live kirtan moments.</p></div>
 <div class="gallery-grid"><a class="gallery-item" href="gallery/IMG_9808.JPG" target="_blank"><img src="gallery/IMG_9808.JPG" alt="Vansi Production Event Photo 1" loading="lazy"></a><a class="gallery-item" href="gallery/IMG_9741.JPG" target="_blank"><img src="gallery/IMG_9741.JPG" alt="Vansi Production Event Photo 2" loading="lazy"></a><a class="gallery-item" href="gallery/IMG_9775.JPG" target="_blank"><img src="gallery/IMG_9775.JPG" alt="Vansi Production Event Photo 3" loading="lazy"></a><a class="gallery-item" href="gallery/IMG_9794.JPG" target="_blank"><img src="gallery/IMG_9794.JPG" alt="Vansi Production Event Photo 4" loading="lazy"></a><a class="gallery-item" href="gallery/IMG_9865.JPG" target="_blank"><img src="gallery/IMG_9865.JPG" alt="Vansi Production Event Photo 5" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4468.jpg" target="_blank"><img src="gallery/1I1A4468.jpg" alt="Vansi Production Event Photo 6" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4471.jpg" target="_blank"><img src="gallery/1I1A4471.jpg" alt="Vansi Production Event Photo 7" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4474.jpg" target="_blank"><img src="gallery/1I1A4474.jpg" alt="Vansi Production Event Photo 8" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4478.jpg" target="_blank"><img src="gallery/1I1A4478.jpg" alt="Vansi Production Event Photo 9" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4481.jpg" target="_blank"><img src="gallery/1I1A4481.jpg" alt="Vansi Production Event Photo 10" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4500.jpg" target="_blank"><img src="gallery/1I1A4500.jpg" alt="Vansi Production Event Photo 11" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4420.jpg" target="_blank"><img src="gallery/1I1A4420.jpg" alt="Vansi Production Event Photo 12" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4434.jpg" target="_blank"><img src="gallery/1I1A4434.jpg" alt="Vansi Production Event Photo 13" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4437.jpg" target="_blank"><img src="gallery/1I1A4437.jpg" alt="Vansi Production Event Photo 14" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4438.jpg" target="_blank"><img src="gallery/1I1A4438.jpg" alt="Vansi Production Event Photo 15" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4445.jpg" target="_blank"><img src="gallery/1I1A4445.jpg" alt="Vansi Production Event Photo 16" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4451.jpg" target="_blank"><img src="gallery/1I1A4451.jpg" alt="Vansi Production Event Photo 17" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4462.jpg" target="_blank"><img src="gallery/1I1A4462.jpg" alt="Vansi Production Event Photo 18" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4463.jpg" target="_blank"><img src="gallery/1I1A4463.jpg" alt="Vansi Production Event Photo 19" loading="lazy"></a><a class="gallery-item" href="gallery/1I1A4466.jpg" target="_blank"><img src="gallery/1I1A4466.jpg" alt="Vansi Production Event Photo 20" loading="lazy"></a></div></div></section>
-
 <section id="videos"><div class="container">
 <div class="head"><small>WATCH OUR WORK</small><h2>Videos & Playlists</h2><p>Vansi Production ke latest videos aur devotional playlists.</p></div>
 <div class="video-grid">
@@ -99,7 +97,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <a class="video" href="https://www.youtube.com/playlist?list=PLRmi0AqOMhpXoKoiy8m88hTuHVkNzdugd" target="_blank"><div style="height:210px;display:flex;align-items:center;justify-content:center;background:#101010;font-size:50px;color:#d5aa55">▶</div><div class="video-body"><div class="play">▶ PLAYLIST</div><h3>Playlist 4</h3><p>Vansi Production kirtan collection.</p></div></a>
 <a class="video" href="https://www.youtube.com/@vansiproduction" target="_blank"><div style="height:210px;display:flex;align-items:center;justify-content:center;background:#101010;font-size:50px;color:#d5aa55">▶</div><div class="video-body"><div class="play">▶ CHANNEL</div><h3>Vansi Production YouTube</h3><p>Poora YouTube channel dekhein.</p></div></a>
 </div></div></section>
-
 <section id="packages"><div class="container">
 <div class="head"><small>CHOOSE YOUR PACKAGE</small><h2>Our Packages</h2><p>Apni requirement ke according package choose karke WhatsApp par enquiry bhejein.</p></div>
 <div style="background:#0b0b0b;border:1px solid #252525;border-radius:14px;overflow:hidden;margin-bottom:28px"><img src="packages.svg" alt="Vansi Production Packages" style="width:100%;display:block"></div>
@@ -108,7 +105,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="card"><h3>Premium Package — ₹11,000</h3><p>2 Camera Setup + Photography + Drone + Conveyance</p><a class="btn" href="#contact" onclick="selectPackage('Premium Package - ₹11,000')">Choose Package</a></div>
 <div class="card"><h3>Custom Package</h3><p>Apni requirement ke according custom production package.</p><a class="btn" href="#contact" onclick="selectPackage('Custom Package')">Contact Us</a></div>
 </div></div></section>
-
 <section class="dark" id="contact"><div class="container">
 <div class="head"><small>GET IN TOUCH</small><h2>Contact Vansi Production</h2><p>Live streaming, event coverage aur video production ke liye enquiry bhejein.</p></div>
 <div class="contact-grid">
@@ -124,7 +120,6 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="form-field full"><button class="btn" type="submit" style="border:0;cursor:pointer;font-size:15px">💬 Send Enquiry on WhatsApp</button><div class="form-note">Submit karte hi WhatsApp khulega aur aapki enquiry Vansi Production ko message ke roop mein mil jayegi.</div></div>
 </div></form></div>
 </div></div></section>
-
 <footer>© 2026 Vansi Production • Bhajan | Live Kirtan | Video Production</footer>
 <script>
 document.querySelectorAll(".stat").forEach(card=>{
