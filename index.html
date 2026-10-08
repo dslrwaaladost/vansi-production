@@ -28,7 +28,7 @@ section{padding:85px 22px}.container{max-width:1200px;margin:auto}
 .head{margin-bottom:35px}.head small{color:var(--gold);font-weight:800;letter-spacing:3px}.head h2{font-size:40px;margin-top:4px}.head p{color:var(--muted);max-width:700px}
 .dark{background:var(--bg2)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3b3222}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3b3222}.service-card{display:block;cursor:pointer;position:relative}.service-card:after{content:"VIEW WORK →";position:absolute;right:24px;bottom:20px;font-size:11px;letter-spacing:1px;color:var(--gold);opacity:0;transition:.2s}.service-card:hover:after{opacity:1}.service-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,.25)}
 .card h3{margin:12px 0 6px}.card p{color:var(--muted);font-size:14px}.icon{font-size:30px}
 .about{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 40%,rgba(213,170,85,.035),transparent 28%)}
 .about:before{content:"📹";position:absolute;right:4%;top:8%;font-size:420px;line-height:1;opacity:.025;filter:grayscale(1) blur(1px);pointer-events:none;transform:rotate(-4deg)}
@@ -69,12 +69,12 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <section class="dark" id="services"><div class="container">
 <div class="head"><small>WHAT WE DO</small><h2>Our Services</h2><p>Production ke major areas ek hi place par.</p></div>
 <div class="grid">
-<div class="card"><div class="icon">🎥</div><h3>Live Streaming</h3><p>YouTube, Facebook aur other platforms ke liye professional multi-camera live streaming.</p></div>
-<div class="card"><div class="icon">🎬</div><h3>Video Production</h3><p>Bhajan, kirtan, event highlights, lyrical videos aur promotional videos.</p></div>
-<div class="card"><div class="icon">📸</div><h3>Photography</h3><p>Devotional aur event photography with natural, professional coverage.</p></div>
-<div class="card"><div class="icon">🎤</div><h3>Event Coverage</h3><p>Kirtan, jagran, sankirtan mahotsav aur special events ki complete visual coverage.</p></div>
-<div class="card"><div class="icon">🖥️</div><h3>Broadcast Production</h3><p>OBS scenes, switching, graphics, replay aur broadcast workflow.</p></div>
-<div class="card"><div class="icon">✨</div><h3>Creative Content</h3><p>Thumbnails, posters, reels, shorts aur event promotional creatives.</p></div>
+<a class="card service-card" href="#videos"><div class="icon">🎥</div><h3>Live Streaming</h3><p>YouTube, Facebook aur other platforms ke liye professional multi-camera live streaming.</p></a>
+<a class="card service-card" href="#videos"><div class="icon">🎬</div><h3>Video Production</h3><p>Bhajan, kirtan, event highlights, lyrical videos aur promotional videos.</p></a>
+<a class="card service-card" href="#gallery"><div class="icon">📸</div><h3>Photography</h3><p>Devotional aur event photography with natural, professional coverage.</p></a>
+<a class="card service-card" href="#gallery"><div class="icon">🎤</div><h3>Event Coverage</h3><p>Kirtan, jagran, sankirtan mahotsav aur special events ki complete visual coverage.</p></a>
+<a class="card service-card" href="#videos"><div class="icon">🖥️</div><h3>Broadcast Production</h3><p>OBS scenes, switching, graphics, replay aur broadcast workflow.</p></a>
+<a class="card service-card" href="#gallery"><div class="icon">✨</div><h3>Creative Content</h3><p>Thumbnails, posters, reels, shorts aur event promotional creatives.</p></a>
 </div></div></section>
 <section class="events" id="events"><div class="container">
 <div class="head"><small>UPCOMING PROGRAMS</small><h2>Upcoming Events</h2><p>Vansi Production ke upcoming programs aur November kirtan details.</p></div>
