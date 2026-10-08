@@ -227,6 +227,20 @@ function selectPackage(name){
 }
 </script>
 <script>
+function removeDuplicateSingerCards(){
+  const list=document.getElementById("moreSingersList");
+  if(!list) return;
+  const seen=new Set();
+  list.querySelectorAll('[onclick*="openSingerEnquiry"]').forEach(card=>{
+    const m=card.getAttribute("onclick").match(/openSingerEnquiry\('([^']+)'\)/);
+    if(!m) return;
+    const name=m[1];
+    if(seen.has(name)) card.remove();
+    else seen.add(name);
+  });
+}
+document.addEventListener("DOMContentLoaded",removeDuplicateSingerCards);
+
 function toggleSingerList(){
   const el=document.getElementById("moreSingersList");
   if(!el) return;
