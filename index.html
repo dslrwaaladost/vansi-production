@@ -138,9 +138,22 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <strong style="color:#d4af37;">Singer List</strong>
 <button type="button" onclick="toggleSingerList()" style="background:none;border:0;color:#aaa;cursor:pointer;font-size:18px;">✕</button>
 </div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
-<button type="button" onclick="openSingerEnquiry('Aman Sanwariya')" style="text-align:left;padding:13px 15px;border:1px solid #292929;background:#151515;color:#fff;border-radius:8px;cursor:pointer;">🎤 Aman Sanwariya <span style="float:right;color:#d4af37;">ENQUIRY →</span></button>
-<button type="button" onclick="openSingerEnquiry('Himanshu Rana')" style="text-align:left;padding:13px 15px;border:1px solid #292929;background:#151515;color:#fff;border-radius:8px;cursor:pointer;">🎤 Himanshu Rana <span style="float:right;color:#d4af37;">ENQUIRY →</span></button>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;">
+<div onclick="openSingerEnquiry('Aman Sanwariya')" style="cursor:pointer;border:1px solid #292929;background:#151515;border-radius:10px;overflow:hidden;">
+<img src="https://at.adobe.com/veThJjpFoD3nzsKa" alt="Aman Sanwariya - Uttarakhand" style="width:100%;height:150px;object-fit:cover;display:block;">
+<div style="padding:12px;text-align:center;"><strong>Aman Sanwariya</strong><div style="color:#aaa;font-size:12px;margin-top:3px;">Uttarakhand</div><div style="color:#d4af37;font-size:11px;font-weight:800;margin-top:8px;">ENQUIRY →</div></div>
+</div>
+<div onclick="openSingerEnquiry('Himanshu Rana')" style="cursor:pointer;border:1px solid #292929;background:#151515;border-radius:10px;overflow:hidden;">
+<img src="https://at.adobe.com/asvaKSPKRwr7JYeR" alt="Himanshu Rana - Uttarakhand" style="width:100%;height:150px;object-fit:cover;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.paddingTop='30px';">
+<div style="padding:12px;text-align:center;"><strong>Himanshu Rana</strong><div style="color:#aaa;font-size:12px;margin-top:3px;">Uttarakhand</div><div style="color:#d4af37;font-size:11px;font-weight:800;margin-top:8px;">ENQUIRY →</div></div>
+</div>
+<div onclick="openSingerEnquiry('Vivek Sharma')" style="cursor:pointer;border:1px solid #292929;background:#151515;border-radius:10px;overflow:hidden;">
+<div style="position:relative;height:150px;overflow:hidden;">
+<img src="https://at.adobe.com/1yGUKi1ADskK39os" alt="Vivek Sharma - Uttarakhand" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s;">
+<img src="https://at.adobe.com/jXM2HpL5COU9bmBP" alt="Vivek Sharma - Uttarakhand" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .25s;" onmouseover="this.style.opacity='1';this.previousElementSibling.style.opacity='0'" onmouseout="this.style.opacity='0';this.previousElementSibling.style.opacity='1'">
+</div>
+<div style="padding:12px;text-align:center;"><strong>Vivek Sharma</strong><div style="color:#aaa;font-size:12px;margin-top:3px;">Uttarakhand</div><div style="color:#d4af37;font-size:11px;font-weight:800;margin-top:8px;">ENQUIRY →</div></div>
+</div>
 </div>
 </div>
 </div></section>
