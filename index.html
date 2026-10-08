@@ -47,11 +47,17 @@ section{padding:85px 22px}.container{max-width:1200px;margin:auto}
 @media(max-width:560px){.package-hotspot{top:77%;height:11%;width:24%}.basic-hotspot{left:7%}.premium-hotspot{left:38%}.custom-hotspot{left:69%}}
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gallery-item{height:240px;border-radius:12px;border:1px solid var(--line);overflow:hidden;display:block;background:#111}.gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease,filter .35s ease}.gallery-item:hover img{transform:scale(1.04);filter:brightness(1.08)}
 .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.video{border-radius:12px;overflow:hidden;background:var(--card);border:1px solid var(--line)}.video img{width:100%;height:210px;object-fit:cover;display:block}.video-body{padding:18px}.play{color:var(--gold2);font-weight:800}
+.singers-section{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(213,170,85,.06),transparent 35%),#080808}
+.singers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.singer-card{background:#111;border:1px solid #2b2b2b;border-radius:12px;padding:28px;text-align:center;min-height:190px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:.25s}
+.singer-card:hover{transform:translateY(-4px);border-color:#6b5325;box-shadow:0 14px 35px rgba(0,0,0,.28)}
+.singer-placeholder{width:78px;height:78px;border-radius:50%;border:1px solid rgba(240,207,131,.35);display:flex;align-items:center;justify-content:center;font-size:34px;background:#0a0a0a;margin-bottom:14px;box-shadow:0 0 25px rgba(213,170,85,.08)}
+.singer-card h3{font-size:19px;margin-bottom:5px;color:var(--white)}.singer-card p{font-size:13px;color:var(--muted)}.singer-status{margin-top:12px;font-size:11px;letter-spacing:1.5px;color:var(--gold2);font-weight:800}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px}.contact-box p{color:var(--muted);margin:9px 0}
 footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28px 20px;font-size:13px}
-@media(max-width:900px){nav{display:none}.grid,.video-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}}
+@media(max-width:900px){nav{display:none}.grid,.video-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}.singers-grid{grid-template-columns:1fr 1fr}}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font-size:13px;color:#d0cbc3;font-weight:700}.form-field input,.form-field select,.form-field textarea{width:100%;padding:13px 14px;border:1px solid #333;border-radius:7px;background:#0b0b0b;color:#f6f2ea;font:inherit;outline:none}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#d5aa55;box-shadow:0 0 0 2px rgba(213,170,85,.1)}.form-field textarea{min-height:120px;resize:vertical}.form-note{font-size:12px;color:#777;margin-top:10px}@media(max-width:560px){.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
-@media(max-width:560px){section{padding:62px 18px}.hero-inner{padding:70px 18px}.grid,.video-grid,.gallery-grid{grid-template-columns:1fr}.brand strong{font-size:16px}.brand img{width:56px}.logo-big{width:280px}h1{font-size:45px}.stats{grid-template-columns:1fr}.about:before{font-size:250px;right:-4%;top:14%}.about:after{font-size:55px;left:-8%;bottom:4%}}
+@media(max-width:560px){section{padding:62px 18px}.hero-inner{padding:70px 18px}.grid,.video-grid,.gallery-grid{grid-template-columns:1fr}.brand strong{font-size:16px}.brand img{width:56px}.logo-big{width:280px}h1{font-size:45px}.stats{grid-template-columns:1fr}.singers-grid{grid-template-columns:1fr}.about:before{font-size:250px;right:-4%;top:14%}.about:after{font-size:55px;left:-8%;bottom:4%}}
 </style>
 </head>
 <body>
@@ -127,6 +133,16 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="card"><h3>Premium Package — ₹11,000</h3><p>2 Camera Setup + Photography + Drone + Conveyance</p><a class="btn" href="#contact" onclick="selectPackage('Premium Package - ₹11,000')">Choose Package</a></div>
 <div class="card"><h3>Custom Package</h3><p>Apni requirement ke according custom production package.</p><a class="btn" href="#contact" onclick="selectPackage('Custom Package')">Contact Us</a></div>
 </div></div></section>
+<section class="singers-section" id="singers"><div class="container">
+<div class="head"><small>ARTIST BOOKING</small><h2>Upcoming Singers</h2><p>Bhajan, kirtan, jagran aur devotional programs ke liye singers ki booking jald available hogi.</p></div>
+<div class="singers-grid">
+<div class="singer-card"><div class="singer-placeholder">🎤</div><h3>Coming Soon</h3><p>Artist profile coming soon</p><div class="singer-status">UPCOMING ARTIST</div></div>
+<div class="singer-card"><div class="singer-placeholder">🎤</div><h3>Coming Soon</h3><p>Artist profile coming soon</p><div class="singer-status">UPCOMING ARTIST</div></div>
+<div class="singer-card"><div class="singer-placeholder">🎤</div><h3>Coming Soon</h3><p>Artist profile coming soon</p><div class="singer-status">UPCOMING ARTIST</div></div>
+</div>
+<div style="margin-top:22px;text-align:center;color:var(--muted);font-size:13px">Singer photos, names aur booking details permissions ke baad yahan add ki jayengi.</div>
+</div></section>
+
 <section class="dark" id="contact"><div class="container">
 <div class="head"><small>GET IN TOUCH</small><h2>Contact Vansi Production</h2><p>Live streaming, event coverage aur video production ke liye enquiry bhejein.</p></div>
 <div class="contact-grid">
