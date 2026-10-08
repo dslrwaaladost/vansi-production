@@ -96,6 +96,15 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <a class="video" href="https://www.youtube.com/@vansiproduction" target="_blank"><div style="height:210px;display:flex;align-items:center;justify-content:center;background:#101010;font-size:50px;color:#d5aa55">▶</div><div class="video-body"><div class="play">▶ CHANNEL</div><h3>Vansi Production YouTube</h3><p>Poora YouTube channel dekhein.</p></div></a>
 </div></div></section>
 
+<section id="packages"><div class="container">
+<div class="head"><small>CHOOSE YOUR PACKAGE</small><h2>Our Packages</h2><p>Apni requirement ke according package choose karke WhatsApp par enquiry bhejein.</p></div>
+<div style="background:#0b0b0b;border:1px solid #252525;border-radius:14px;overflow:hidden;margin-bottom:28px"><img src="packages.svg" alt="Vansi Production Packages" style="width:100%;display:block"></div>
+<div class="grid">
+<div class="card"><h3>Basic Package — ₹5,000</h3><p>2 Camera Setup + Conveyance</p><a class="btn" href="#contact" onclick="selectPackage('Basic Package - ₹5,000')">Choose Package</a></div>
+<div class="card"><h3>Premium Package — ₹11,000</h3><p>2 Camera Setup + Photography + Drone + Conveyance</p><a class="btn" href="#contact" onclick="selectPackage('Premium Package - ₹11,000')">Choose Package</a></div>
+<div class="card"><h3>Custom Package</h3><p>Apni requirement ke according custom production package.</p><a class="btn" href="#contact" onclick="selectPackage('Custom Package')">Contact Us</a></div>
+</div></div></section>
+
 <section class="dark" id="contact"><div class="container">
 <div class="head"><small>GET IN TOUCH</small><h2>Contact Vansi Production</h2><p>Live streaming, event coverage aur video production ke liye enquiry bhejein.</p></div>
 <div class="contact-grid">
@@ -107,7 +116,7 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 <div class="form-field"><label>Event Location *</label><input id="location" required placeholder="City / Venue"></div>
 <div class="form-field"><label>Program / Artist</label><input id="program" placeholder="Kirtan / Jagran / Artist"></div>
 <div class="form-field"><label>Required Service *</label><select id="service" required><option value="">Select service</option><option>Live Streaming</option><option>Video Production</option><option>Photography</option><option>Event Coverage</option><option>Live Streaming + Video Production</option><option>Complete Production</option></select></div>
-<div class="form-field full"><label>Additional Message</label><textarea id="message" placeholder="Apni requirement yahan likhein..."></textarea></div>
+<div class="form-field full"><label>Selected Package *</label><select id="package" required><option value="">Select package</option><option>Basic Package - ₹5,000</option><option>Premium Package - ₹11,000</option><option>Custom Package</option></select></div><div class="form-field full"><label>Additional Message</label><textarea id="message" placeholder="Apni requirement yahan likhein..."></textarea></div>
 <div class="form-field full"><button class="btn" type="submit" style="border:0;cursor:pointer;font-size:15px">💬 Send Enquiry on WhatsApp</button><div class="form-note">Submit karte hi WhatsApp khulega aur aapki enquiry Vansi Production ko message ke roop mein mil jayegi.</div></div>
 </div></form></div>
 </div></div></section>
@@ -136,11 +145,15 @@ document.getElementById("enquiryForm").addEventListener("submit",function(e){
   const location=document.getElementById("location").value.trim();
   const program=document.getElementById("program").value.trim() || "Not specified";
   const service=document.getElementById("service").value;
+  const packageName=document.getElementById("package").value;
   const message=document.getElementById("message").value.trim() || "No additional message";
   const formattedDate=date ? new Date(date+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"}) : "Not specified";
   const text="*Vansi Production – New Enquiry*\n\n👤 Name: "+name+"\n📱 Mobile: "+mobile+"\n📅 Event Date: "+formattedDate+"\n📍 Event Location: "+location+"\n🎤 Program / Artist: "+program+"\n🎥 Required Service: "+service+"\n📝 Message: "+message;
   window.open("https://wa.me/918445363600?text="+encodeURIComponent(text),"_blank");
 });
+</script>
+<script>
+function selectPackage(name){const el=document.getElementById("package");if(el){el.value=name;}}
 </script>
 </body>
 </html>
