@@ -39,6 +39,7 @@ section{padding:85px 22px}.container{max-width:1200px;margin:auto}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:30px}.contact-box p{color:var(--muted);margin:9px 0}
 footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28px 20px;font-size:13px}
 @media(max-width:900px){nav{display:none}.grid,.video-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.form-field{display:flex;flex-direction:column;gap:6px}.form-field.full{grid-column:1/-1}.form-field label{font-size:13px;color:#d0cbc3;font-weight:700}.form-field input,.form-field select,.form-field textarea{width:100%;padding:13px 14px;border:1px solid #333;border-radius:7px;background:#0b0b0b;color:#f6f2ea;font:inherit;outline:none}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#d5aa55;box-shadow:0 0 0 2px rgba(213,170,85,.1)}.form-field textarea{min-height:120px;resize:vertical}.form-note{font-size:12px;color:#777;margin-top:10px}@media(max-width:560px){.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}}
 @media(max-width:560px){section{padding:62px 18px}.hero-inner{padding:70px 18px}.grid,.video-grid,.gallery-grid{grid-template-columns:1fr}.brand strong{font-size:16px}.brand img{width:56px}.logo-big{width:280px}h1{font-size:45px}.stats{grid-template-columns:1fr}}
 </style>
 </head>
@@ -96,10 +97,19 @@ footer{border-top:1px solid var(--line);text-align:center;color:#777;padding:28p
 </div></div></section>
 
 <section class="dark" id="contact"><div class="container">
-<div class="head"><small>GET IN TOUCH</small><h2>Contact Vansi Production</h2><p>Live streaming, event coverage aur video production ke liye.</p></div>
+<div class="head"><small>GET IN TOUCH</small><h2>Contact Vansi Production</h2><p>Live streaming, event coverage aur video production ke liye enquiry bhejein.</p></div>
 <div class="contact-grid">
-<div class="contact-box"><h3>Vansi Production</h3><p>📍 Rampur, Uttar Pradesh</p><p>📲 Instagram: @vansi_production</p><p>▶️ YouTube: <strong>Vansi Production</strong></p><p>💬 WhatsApp: <strong>+91 84453 63600</strong></p><div class="actions" style="margin-top:20px"><a class="btn" href="https://wa.me/918445363600?text=Namaste%20Vansi%20Production%2C%20mujhe%20aapke%20services%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank">💬 WhatsApp Now</a><a class="btn" href="https://www.instagram.com/vansi_production/" target="_blank">Instagram</a><a class="btn" href="https://www.youtube.com/@vansiproduction" target="_blank">YouTube</a><a class="btn alt" href="#home">Back to Top</a></div></div>
-<div class="contact-box"><h3>For Bookings</h3><p>Event date, location, artist/program aur required production details share karein.</p><a class="btn" href="https://wa.me/918445363600?text=Namaste%20Vansi%20Production%2C%20mujhe%20booking%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank">💬 WhatsApp for Booking</a></div>
+<div class="contact-box"><h3>Vansi Production</h3><p>📍 Rampur, Uttar Pradesh</p><p>📲 Instagram: @vansi_production</p><p>▶️ YouTube: <strong>Vansi Production</strong></p><p>💬 WhatsApp: <strong>+91 84453 63600</strong></p><div class="actions" style="margin-top:20px"><a class="btn" href="https://wa.me/918445363600?text=Namaste%20Vansi%20Production%2C%20mujhe%20aapke%20services%20ke%20baare%20mein%20jaankari%20chahiye." target="_blank">💬 WhatsApp Now</a><a class="btn" href="https://www.instagram.com/vansi_production/" target="_blank">Instagram</a><a class="btn" href="https://www.youtube.com/@vansiproduction" target="_blank">YouTube</a></div></div>
+<div class="contact-box"><h3>Booking / Enquiry Form</h3><form id="enquiryForm"><div class="form-grid">
+<div class="form-field"><label>Name *</label><input id="name" required placeholder="Aapka naam"></div>
+<div class="form-field"><label>Mobile Number *</label><input id="mobile" type="tel" required placeholder="Mobile number"></div>
+<div class="form-field"><label>Event Date *</label><input id="date" type="date" required></div>
+<div class="form-field"><label>Event Location *</label><input id="location" required placeholder="City / Venue"></div>
+<div class="form-field"><label>Program / Artist</label><input id="program" placeholder="Kirtan / Jagran / Artist"></div>
+<div class="form-field"><label>Required Service *</label><select id="service" required><option value="">Select service</option><option>Live Streaming</option><option>Video Production</option><option>Photography</option><option>Event Coverage</option><option>Live Streaming + Video Production</option><option>Complete Production</option></select></div>
+<div class="form-field full"><label>Additional Message</label><textarea id="message" placeholder="Apni requirement yahan likhein..."></textarea></div>
+<div class="form-field full"><button class="btn" type="submit" style="border:0;cursor:pointer;font-size:15px">💬 Send Enquiry on WhatsApp</button><div class="form-note">Submit karte hi WhatsApp khulega aur aapki enquiry Vansi Production ko message ke roop mein mil jayegi.</div></div>
+</div></form></div>
 </div></div></section>
 
 <footer>© 2026 Vansi Production • Bhajan | Live Kirtan | Video Production</footer>
@@ -115,6 +125,21 @@ document.querySelectorAll(".stat").forEach(card=>{
     lens.style.left="50%";
     lens.style.top="50%";
   });
+});
+</script>
+<script>
+document.getElementById("enquiryForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const mobile=document.getElementById("mobile").value.trim();
+  const date=document.getElementById("date").value;
+  const location=document.getElementById("location").value.trim();
+  const program=document.getElementById("program").value.trim() || "Not specified";
+  const service=document.getElementById("service").value;
+  const message=document.getElementById("message").value.trim() || "No additional message";
+  const formattedDate=date ? new Date(date+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"}) : "Not specified";
+  const text="*Vansi Production – New Enquiry*\n\n👤 Name: "+name+"\n📱 Mobile: "+mobile+"\n📅 Event Date: "+formattedDate+"\n📍 Event Location: "+location+"\n🎤 Program / Artist: "+program+"\n🎥 Required Service: "+service+"\n📝 Message: "+message;
+  window.open("https://wa.me/918445363600?text="+encodeURIComponent(text),"_blank");
 });
 </script>
 </body>
