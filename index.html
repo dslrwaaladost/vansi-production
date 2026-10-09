@@ -227,6 +227,18 @@ function selectPackage(name){
 }
 </script>
 <script>
+function singerImageFallback(img){
+  if (!img || img.dataset.fallbackApplied === "1") return;
+  img.dataset.fallbackApplied = "1";
+  const name = (img.alt || "Vansi Production").replace(/\s*[-–].*$/, "").trim();
+  const initials = name.split(/\s+/).slice(0,2).map(part => part.charAt(0)).join("").toUpperCase() || "VP";
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#252019"/><stop offset="1" stop-color="#080808"/></linearGradient></defs><rect width="600" height="600" fill="url(#g)"/><circle cx="300" cy="245" r="100" fill="#d5aa55" opacity=".12"/><text x="300" y="285" text-anchor="middle" font-family="Arial,sans-serif" font-size="112" font-weight="700" fill="#d5aa55">' + initials + '</text><path d="M90 365 H510" stroke="#d5aa55" stroke-opacity=".6"/><text x="300" y="410" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" letter-spacing="5" fill="#d5aa55">VANSI PRODUCTION</text><text x="300" y="450" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#bcb4a6">SINGER PROFILE</text></svg>';
+  img.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+document.addEventListener("error", function(event){
+  const img = event.target;
+  if (img && img.tagName === "IMG" && img.closest(".singer-card, #singerList, [onclick*='openSingerEnquiry']")) singerImageFallback(img);
+}, true);
 function removeDuplicateSingerCards(){
   const list=document.getElementById("moreSingersList");
   if(!list) return;
